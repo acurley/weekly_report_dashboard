@@ -16,8 +16,10 @@ When preparing a new week's worth of data, create a new directory in Dropbox/das
 	* Open PDF in Adobe Acrobat
 	* Tools => Pages => Extract all pages
 	* Delete original Jenark PDF.
+	* Run "Export Directory to XML" action
 	
 
 ## Assumptions
 1.  Property#phases won't change.  If so, this value must be manually updated.  Source of this data is the 50F report and the Marketing Director's assessment.
 2.  Property#total_units won't change.  If so, this value must be manually updated. Source of value is the 50F report.
+3.  If new properties are added, the software might fail if there is a new alternate name that is not registered.
