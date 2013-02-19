@@ -14,5 +14,7 @@ namespace :load do
   task :current_data => :environment do 
     puts "Loading today's data..."
     LoadData.load_50f
+    LoadData.load_81f
+    LoadData.load_corelogic_report
   end
 end
