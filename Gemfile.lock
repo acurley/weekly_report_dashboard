@@ -62,6 +62,7 @@ GEM
       rails
     mime-types (1.21)
     multi_json (1.6.1)
+    mysql2 (0.3.11)
     nokogiri (1.5.6)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -125,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   meta_request
+  mysql2
   nokogiri
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)

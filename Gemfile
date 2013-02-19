@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'therubyracer'
 gem 'nokogiri'
+gem 'mysql2'
 
 group :development do
   gem 'better_errors'
