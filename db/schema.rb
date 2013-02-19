@@ -22,25 +22,25 @@ ActiveRecord::Schema.define(:version => 20130219142002) do
 
   create_table "properties", :force => true do |t|
     t.string   "name"
-    t.integer  "total_units"
-    t.integer  "phases"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "total_units", :default => 0
+    t.integer  "phases",      :default => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "stats", :force => true do |t|
     t.integer  "property_id"
     t.date     "date_retrieved"
-    t.integer  "current_occupied"
-    t.integer  "total_vacants"
-    t.integer  "vacant_rented"
-    t.integer  "vacant_unrented"
-    t.float    "percent_occupied"
-    t.float    "percent_preleased"
-    t.integer  "total_guest_cards"
-    t.integer  "total_apps"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "current_occupied",  :default => 0
+    t.integer  "total_vacants",     :default => 0
+    t.integer  "vacant_rented",     :default => 0
+    t.integer  "vacant_unrented",   :default => 0
+    t.float    "percent_occupied",  :default => 0.0
+    t.float    "percent_preleased", :default => 0.0
+    t.integer  "total_guest_cards", :default => 0
+    t.integer  "total_apps",        :default => 0
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end
