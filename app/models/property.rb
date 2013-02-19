@@ -1,6 +1,6 @@
 class Property < ActiveRecord::Base
 
-  attr_accessible :name, :total_units
+  attr_accessible :name, :total_units, :phases
 
   has_many :alternate_names
   has_many :stats
