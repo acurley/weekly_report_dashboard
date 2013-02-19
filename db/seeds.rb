@@ -10,7 +10,7 @@ property_names = {
   "Barter Court" => ["BC", "Barter Court"],
   "Berkshire" => ["Berkshire", "bk", "bk Berkshire Apts Landmark Property Services,Inc"],
   "Brookview" => ["Brookview", "bv", "bv Brookview Landmark Property Services,Inc"],
-  "Cameron" => ["Cameron", "CB"],
+  "Cameron" => ["Cameron", "CB", "CB Cameron Bldg Landmark Property Services,Inc"],
   "Colonial Heights and Township" => ["Colonial Heights and Township", "ch", "ts", "ch Colonial Heights, LL Landmark Property Services,Inc"],
   "Cloverleaf Lake" => ["cl", "Cloverleaf Lake", "cl Cloverleaf Lake Landmark Property Services,Inc"],
   "Creekpointe" => ["Creekpointe", "cp", "cp Creekpointe Landmark Property Services,Inc"],
@@ -36,9 +36,60 @@ property_names = {
   "Willow Oaks" => ["Willow Oaks", "wo", "wo Willow Oaks Landmark Property Services,Inc"]
 }
 
+property_phases = {
+  "Stratford Hills and Bethany Springs" => 2,
+  "Sand Ridge" => 3,
+  "Tamarack" => 2,
+  "Southgate Manor" => 2,
+  "Overlook at Brook Run" => 2,
+  "Tanglewood" => 2,
+  "Colonial Heights and Township" => 2
+}
+
+property_total_units = {
+  "Arbor Crest" => 70,
+  "Barter Court" => 11,
+  "Berkshire" => 56,
+  "Brookview" => 48,
+  "Cameron" => 33,
+  "Colonial Heights and Township" => 109,
+  "Cloverleaf Lake" => 210,
+  "Creekpointe" => 214,
+  "Glenns at Millers Lane" => 144,
+  "Hamptons" => 212,
+  "Hickory Point" => 175,
+  "Hilliard Road" => 213,
+  "Longhill Grove" => 170,
+  "Lieutenants Run" => 168,
+  "Misty Pines" => 83,
+  "Match Point" => 258,
+  "Mayfair" => 197,
+  "North Dunlop" => 34,
+  "North Slope" => 56,
+  "Old Bridge" => 222,
+  "Overlook at Brook Run" => 282,
+  "Perry Street" => 149,
+  "Southgate Manor" => 146,
+  "Stratford Hills and Bethany Springs" => 430,
+  "Sand Ridge" => 198,
+  "Tamarack" => 180,
+  "Tanglewood" => 136,
+  "Willow Oaks" => 360
+}
+
 property_names.each {|key, value|
   p = Property.create!(name: "#{key}")
   value.each {|v|
     AlternateName.create!(name: v, property_id: p.id)
   }
+}
+
+property_total_units.each {|key, value|
+  p = Property.where(name: key).first
+  p.update_attributes(total_units: value)
+}
+
+property_phases.each {|key, value|
+  p = Property.where(name: key).first
+  p.update_attributes(phases: value)
 }
