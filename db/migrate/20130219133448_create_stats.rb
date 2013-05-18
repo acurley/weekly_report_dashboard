@@ -11,11 +11,12 @@ class CreateStats < ActiveRecord::Migration
       t.float :percent_preleased, :default => 0.0
       t.integer :total_guest_cards, :default => 0
       t.integer :total_apps, :default => 0
-      t.integer :application_accepted, :default => 0
-      t.integer :application_accepted_with_conditions, :default => 0
-      t.integer :applications_declined, :default => 0
-      t.integer :average_application_score, :default => 0
-      t.float :rejection_rate, :default => 0.0
+      t.integer :applications_rejected, :default => 0
+      t.integer :applications_processed, :default => 0
+      t.integer :applications_cancelled, :default => 0
+      t.float :percent_applications_rejected, :default => 0.0
+      t.float :percent_applications_cancelled, :default => 0.0
+      t.float :percent_applications_rejected_and_cancelled, :default => 0.0
 
       t.timestamps
     end

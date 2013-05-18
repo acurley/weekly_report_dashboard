@@ -7,6 +7,7 @@ namespace :load do
     dirs = Dir.entries("#{Dir.home}/Dropbox/Programming/dashboard_work/weekly_report_data/").delete_if {|x| /201*/ !~ x}
     dirs.each {|date|
       LoadData.load_50f(date)
+      LoadData.calculate_percentages
     }
   end
 
@@ -15,6 +16,7 @@ namespace :load do
     puts "Loading today's data..."
     LoadData.load_50f
     LoadData.load_81f
-    LoadData.load_corelogic_report
+    LoadData.load_reasons_analysis
+    LoadData.calculate_percentages
   end
 end
